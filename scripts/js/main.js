@@ -47,7 +47,6 @@
         en: {
             pageTitle: "TTE HTML5 Standard Views",
             appTitle: "TTE: Standard Views",
-            feedback: "Send feedback",
             viewLabel: "View",
             languageLabel: "Language",
             detailsLabel: "Details",
@@ -71,7 +70,6 @@
         zh: {
             pageTitle: "经胸超声心动图 HTML5 标准切面",
             appTitle: "经胸超声心动图：标准切面",
-            feedback: "反馈",
             viewLabel: "切面",
             languageLabel: "语言",
             detailsLabel: "详情",
