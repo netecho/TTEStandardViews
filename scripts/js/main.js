@@ -396,7 +396,7 @@
             else if (rotatableView == false)
                 {
                     
-                    var twoAxisToDisplay = "url('images/" + viewsFolderArray[currentViewIndex] + "/spritesheet_3d.jpg')";
+                    var twoAxisToDisplay = "url('images/" + viewsFolderArray[currentViewIndex] + "/spriteSheet_3d.jpg')";
                     
                     $("#heartModelTwoAxisSpin").css('background-image', twoAxisToDisplay);
                     $("#heartModelTwoAxisSpin").css('background-position', currentTwoAxisPosition);
