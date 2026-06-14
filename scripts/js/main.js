@@ -115,6 +115,29 @@
         "Right Parasternal Ascending Aorta": "右胸骨旁升主动脉切面"
     };
 
+    var viewNameAbbreviations = {
+        "Parasternal Long Axis": "PLAX",
+        "Parasternal Long Axis Right Ventricular Inflow View": "PLAX RVIT",
+        "Parasternal Long Axis Right Ventricular Outflow View": "PLAX RVOT",
+        "Parasternal Short Axis Aortic Valve and Right Ventricular Outflow Tract Level": "PSAX AV/RVOT",
+        "Parasternal Short Axis Left Ventricle at Mitral Valve Level": "PSAX MV",
+        "Parasternal Short Axis Left Ventricle at Mid Level": "PSAX mid",
+        "Parasternal Short Axis Left Ventricle at Apex Level": "PSAX apex",
+        "Parasternal Pulmonary Artery Bifurcation View": "PSAX PA",
+        "Apical Four Chamber": "A4C",
+        "Apical Five Chamber (Elevated Four Chamber view)": "A5C",
+        "Apical Two Chamber (Vertical Long Axis view)": "A2C",
+        "Apical Long Axis (Three Chamber view)": "A3C/ALAX",
+        "Subcostal Four Chamber": "SC 4C",
+        "Subcostal Aortic Valve and Right Ventricular Outflow Tract": "SC AV/RVOT",
+        "Subcostal Left Ventricle at Mitral Valve": "SC MV",
+        "Subcostal Left Ventricle at Mid": "SC mid",
+        "Subcostal Left Ventricle at Apex": "SC apex",
+        "Subcostal Inferior Vena Cava": "SC IVC",
+        "Suprasternal Long Axis of Aortic Arch": "SSN Ao Arch",
+        "Right Parasternal Ascending Aorta": "RPS Asc Ao"
+    };
+
      //console.log("viewsFolderArray");   
      //console.log(viewsFolderArray);   
     //assigning functions to buttons/toggles/sliders
@@ -743,6 +766,11 @@
         {
             if (currentLanguage == "zh" && viewNameTranslations[viewName])
                 {
+                    if (viewNameAbbreviations[viewName])
+                        {
+                            return viewNameTranslations[viewName] + "（" + viewNameAbbreviations[viewName] + "）";
+                        }
+
                     return viewNameTranslations[viewName];
                 }
 
