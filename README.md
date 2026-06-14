@@ -4,11 +4,13 @@ This folder is a local offline copy of:
 
 https://pie.med.utoronto.ca/TTE/TTE_content/assets/applications/TTE-HTML5-SV/index.html
 
-Run it through a local static server because the app loads `xml/TTE_Standard_Text_02.xml` with AJAX. Opening `index.html` directly with `file://` may block that XML request in Chrome.
+It can be opened directly as a static page. The original XML metadata is also bundled as `scripts/js/tte-data.js`, so Chrome does not need to make a blocked `file://` AJAX request.
 
 ## Start
 
-From PowerShell:
+Option 1: double-click `index.html`.
+
+Option 2: run a local static server from PowerShell:
 
 ```powershell
 .\start_server.ps1
@@ -24,6 +26,7 @@ http://127.0.0.1:8010/index.html
 
 - `index.html`: rewritten to use local vendor files
 - `scripts/`: original app JavaScript and CSS
-- `xml/`: view metadata
+- `scripts/js/tte-data.js`: view metadata bundled for direct `file://` opening
+- `xml/`: original view metadata
 - `images/`: 20 standard TTE view folders, 5 image assets per view
 - `vendor/`: CDN JavaScript, CSS, and Font Awesome fonts downloaded locally

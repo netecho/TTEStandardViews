@@ -528,13 +528,20 @@
             //console.log("End of toggleClipOverlay");
         }
     
-    // Load the XML file and parse the number of views, the view folder names, the names of the views and the 4 columns of text to display below the tee clip.
+    // Load local JS data first so the app also works when index.html is opened directly with file://.
 
     function loadMasterXML(language)
         {
             viewsArray.length = 0;
             viewsFolderArray.length = 0;
             textColumnsArray.length = 0;
+
+            if (window.tteStandardViewsData)
+                {
+                    loadMasterRows(window.tteStandardViewsData);
+                    finishMasterDataLoad();
+                    return;
+                }
             
             var xmlFileName = 'xml/TTE_Standard_Text_02.xml';
             
@@ -571,28 +578,49 @@
                     
                 });
                 
-                renderViewSelect();
-                
-                $("#textColumn_01").html(textColumnsArray[0][0]);
-                $("#textColumn_02").html(textColumnsArray[0][1] + "<br>");
-                $("#textColumn_03").html(textColumnsArray[0][2] + "<br>");
-                $("#textColumn_04").html(textColumnsArray[0][3] + "<br>");
-
-                viewIndex = 0;
-                $("#preloadOverlay").show();
-                applyViewChange(viewIndex);
-                togglePreloader();
-
-                console.log("viewSelectionHtmlString");
-                console.log($("#viewSelect").html());
+                finishMasterDataLoad();
                 
                 }//success
+            }).fail(function() {
+                $("#preloadOverlay").hide();
+                $("#detailText").html("Unable to load local view data. Please make sure scripts/js/tte-data.js is present.");
             });
 
             console.log("End of loadMasterXML");
             console.log("viewsFolderArray");
             console.log(viewsFolderArray);
 
+        }
+
+    function loadMasterRows(rows)
+        {
+            for (var i = 0; i < rows.length; i++)
+                {
+                    viewsFolderArray.push(rows[i].folderName);
+                    viewsArray.push(rows[i].sectionName);
+                    textColumnsArray.push(rows[i].columns);
+                }
+        }
+
+    function finishMasterDataLoad()
+        {
+            renderViewSelect();
+
+            if (textColumnsArray.length > 0)
+                {
+                    $("#textColumn_01").html(textColumnsArray[0][0]);
+                    $("#textColumn_02").html(textColumnsArray[0][1] + "<br>");
+                    $("#textColumn_03").html(textColumnsArray[0][2] + "<br>");
+                    $("#textColumn_04").html(textColumnsArray[0][3] + "<br>");
+                }
+
+            var viewIndex = 0;
+            $("#preloadOverlay").show();
+            applyViewChange(viewIndex);
+            togglePreloader();
+
+            console.log("viewSelectionHtmlString");
+            console.log($("#viewSelect").html());
         }
 
     function applyViewChange(viewIndex)
