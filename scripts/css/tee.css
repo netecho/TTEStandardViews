@@ -130,6 +130,24 @@
     .checkbox{
         cursor: pointer;
     }
+
+    .view-toggle-row {
+        margin-left: 0;
+        margin-right: 0;
+        justify-content: center;
+        column-gap: 2px;
+        row-gap: 8px;
+    }
+
+    .view-toggle-row > [class*="col-"] {
+        flex: 0 0 auto;
+        max-width: none;
+        width: auto;
+    }
+
+    .view-toggle-row .checkbox {
+        margin-bottom: 0;
+    }
         
     .textColumn
     {
