@@ -1,0 +1,268 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=yes, resize-to-fit=yes">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.5">
+    <title>TTE HTML5 Standard Views</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="scripts/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" type="text/css" rel="stylesheet">
+    <link href="vendor/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+    <link href="vendor/bootstrap-slider/css/bootstrap-slider.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap-select/css/bootstrap-select.css">
+      
+    <!-- Fixes in tee.css -->
+    <link href="scripts/css/tee.css" rel="stylesheet" crossorigin="anonymous">
+
+  </head>
+    
+<!-- Page Content -->
+<body>
+
+<!-- Preload overlay -->
+    
+<div id="preloadOverlay">
+
+  <!-- Overlay content -->
+  <div style="position: absolute; height:100%; top:50%; width:100%; left:44.5%" class="mx-auto">
+  <div class="spinner-border text-primary" style="width: 5em; height: 5em;" role="status">
+
+  </div>
+</div>
+
+</div>    
+    
+<!-- Master Container-->
+<div class="container" style="min-width: 420px">
+ 
+    
+ <!--Minimal Header -->
+ <nav class="navbar sticky-top navbar-dark bg-primary mb-3">
+    
+    <a class="navbar-brand" href="#" data-i18n="appTitle">TTE: Standard Views</a>
+    <a class="text-light mt-1 small" href="http://pie.med.utoronto.ca/TTE/TTE_content/feedbackform.html" target="_blank" data-i18n="feedback">Send feedback</a>
+    
+ </nav>
+
+ <!-- Minimal Header -->       
+
+    <!-- Top Menu boxes -->
+  <div class="row d-lg-flex">
+
+<!-- View Menu box -->
+  <div class="input-group mb-3 col-lg-6 col-xl-5">
+      <div class="input-group-prepend">
+        <label class="input-group-text bg-primary text-light" for="viewSelect" data-i18n="viewLabel">View</label>
+      </div>
+      <select class="custom-select border-secondary" id="viewSelect">
+      </select>
+  </div>
+
+  <div class="input-group mb-3 col-lg-3 col-xl-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text bg-primary text-light" for="languageSelect" data-i18n="languageLabel">Language</label>
+      </div>
+      <select class="custom-select border-secondary" id="languageSelect" aria-label="Language">
+          <option value="en">English</option>
+          <option value="zh">中文</option>
+      </select>
+  </div>
+      
+  </div>
+  <!-- Top Menu boxes -->    
+
+  <!-- 3D heart module, Imaging module and Text module -->        
+  <div class="row">
+      
+    <!--3d heart module Note: For TTE Standard Views, initial view folder is PS_LAX -->  
+    <div class="col-md-10 mx-md-auto col-lg-6 col-xl-5 mb-3">
+      <div class="card">
+        <div style="background:#000" class="row no-gutters" >
+        <div style="background:#000"  class="col-11">
+            
+        <div id="heartModelTwoAxisSpin" class="mx-auto d-block" 
+             style="height:349px;
+                    width:389px;
+                    background: url('images/PS_LAX/spriteSheet_3d.jpg') 0px 0px repeat
+                    ">
+        </div>
+        
+        </div>    
+        <div class="col-1 pl-xl-2 pl-md-3 pl-2 pt-3 sliderComponent">
+            <input
+            type="slider"
+            id="sliderV"
+            data-slider-id='sliderV'
+            data-provide="slider"
+            data-slider-orientation='vertical'
+            data-slider-min="0"
+            data-slider-max="36"
+            data-slider-step="1"
+            data-slider-value="0"
+            data-slider-tooltip="hide"
+        >
+        </div>    
+        </div>
+        <div class="card-footer py-2 sliderComponent">
+            
+        <input
+            type="slider"
+               id='sliderH'
+            data-slider-id='sliderH'
+            data-provide="slider"
+            data-slider-min="0"
+            data-slider-max="36"
+            data-slider-step="1"
+            data-slider-value="0"
+            data-slider-tooltip="hide"
+        >
+        </div>
+          
+        <div class="card-footer">
+            <div class="row">
+                
+                <div id="viewRibToggleDiv" class="col-4 text-center px-0">
+                    <div class="checkbox">
+                        <input id="viewRibToggle" type="checkbox" checked data-toggle="toggle" data-size="small" data-on="View Ribs on" data-off="View Ribs off" data-height="20" data-width="120">
+                    </div>
+                </div>
+
+                <div id="viewSliceToggleDiv" class="col-4 text-center px-0">
+                    <div class="checkbox">
+                        <input id="viewSliceToggle" type="checkbox" data-toggle="toggle" data-size="small" data-on="View slice on" data-off="View slice off" data-height="20" data-width="120">
+                    </div>
+                </div>
+                
+                <div id="labelsToggleDiv" class="col-4 text-center px-0" >
+                    <div class="checkbox">
+                        <input id="labelsToggle" type="checkbox" checked data-toggle="toggle" data-size="small" data-on="Labels on" data-off="Labels off" data-height="20" data-width="120" data-onstyle="success">
+                    </div>
+                </div>
+                
+                <div class="col-4 text-center px-0 border-left">
+                    <div class="checkbox">
+                        <input id= "viewRotatableToggle" type="checkbox" checked data-toggle="toggle" data-size="small" data-on="Rotatable view on" data-off="Rotatable view off" data-height="20" data-width="150">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--3d heart module-->    
+      
+    <!--Imaging module-->    
+    <div class="col-md-10 mx-md-auto col-lg-6 col-xl-7 mb-3">
+      <div class="card">
+        <div style="background:#000;  padding: 20px 0">
+        <div id="clipPlayer" class="mx-auto d-block" 
+             style="height:350px;
+                    width:390px;
+                    background: url('images/PS_LAX/spriteSheet_vid.jpg') 0px 350px;
+                    ">
+        </div>
+        </div>
+        
+        <div class="card-footer py-2">
+            <div class="row">
+                <div class="col-1 text-center">
+                    <button class="btn btn-primary" type="button" id="playPauseBtn"><i class="fa fa-pause"></i></button>
+                </div>
+                
+                <div class="col-8 text-center pl-5 pt-1 ">
+                    <input
+                    type="slider"
+                    id ="clipSlider"
+                    data-slider-id='clipSlider'
+                    data-provide="slider"
+                    data-slider-min="0"
+                    data-slider-max="0"
+                    data-slider-step="1"
+                    data-slider-value="1"
+                    data-slider-tooltip="hide"
+                >
+                </div>
+                
+                <div class="col-3 text-center px-auto pt-1">
+                    <div class="checkbox">
+                        <input id= "viewClipOverlay" type="checkbox" data-toggle="toggle" data-size="small" data-on="<p class='triangle-text-on'>Hide</p><div class='triangle-left-on'>
+<div class='triangle-right-on'></div></div>" data-off="<p class='triangle-text-off'>Show</p><div class='triangle-left-off'>
+<div class='triangle-right-off'></div></div>" data-height="20" data-width="100">
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+      </div>
+    </div>
+    <!--Imaging module--> 
+    
+
+    <!--Chest image-->
+    <div id="TTEposition" class="col-md-6 mb-3">
+         <img class="center" src="images/PS_LAX/TTE_position.jpg" alt="Chest" height="300" width="300"> 
+    </div>
+    
+    <!--End of Chest image-->
+
+    <div class="col-md-6">
+    <!-- Details menu-->    
+    <div class="input-group col-lg-12 mb-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text bg-primary text-light" for="detailSelect" data-i18n="detailsLabel">Details</label>
+      </div>
+      <select class="custom-select border-secondary" id="detailSelect">
+          <option id="detailOption" value="1" data-i18n="detailObtain">How to Obtain this View</option>
+          <option id="detailOption" value="2" data-i18n="detailOptimize">How to Optimize this View</option>
+          <option id="detailOption" value="3" data-i18n="detailAssess">Use this View to Assess</option>
+          <option id="detailOption" value="0" data-i18n="detailIdentify">Identify these Structures</option>
+      </select>
+    </div>
+    <!-- End of Details menu-->
+
+        
+    <!--Text columns-->
+    <div class="col-lg-10 mx-lg-auto">
+        <div class="row">
+        <div id="detailText" class="textColumn">
+        </div>
+            
+        </div> <!--/.row for text columns-->
+    </div>
+    <!-- End of Text columns-->
+    </div> <!--media-body-->
+
+ 
+    <!-- /.row  for TTE position and Text module-->  
+    </div>
+    <!-- /.row  for 3D heart module, Imaging module, TTE position and Text module-->
+
+    <!--Footer-->
+    <div class="row small">
+        <div class="col-6"><br><span data-i18n="footerVersion">TTE: Standard views. Version 2.00</span></div>
+        <div class="col-6 ml-auto text-right"><br><span data-i18n="footerCopyright">Content copyright &copy; pie.med.utoronto.ca. All rights reserved.</span></div>
+    </div>
+    <!--Footer-->
+
+</div>
+<!-- /.container -->
+    
+    <script src="scripts/js/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+    <script src="scripts/js/popper.min.js" crossorigin="anonymous"></script>
+    <script src="scripts/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="vendor/bootstrap-toggle/js/bootstrap-toggle.min.js"></script>
+    <script src="vendor/bootstrap-slider/js/bootstrap-slider.min.js"></script>
+    <script src="vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <script src="vendor/jquery.waitforimages/jquery.waitforimages.min.js"></script>
+            
+    <!--Offloaded to main.js-->
+    <script src="scripts/js/detail-zh.js?v=20260614-detail-zh" crossorigin="anonymous"></script>
+    <script src="scripts/js/main.js?v=20260614-detail-zh" crossorigin="anonymous"></script>
+    
+</body>
+</html>
+

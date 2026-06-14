@@ -1,0 +1,1080 @@
+<comboBoxData>
+	<row
+		sectionName="Parasternal Long Axis"
+		swf_spin="swfs/spinSWF/twoAxis-PS_LAX.swf"
+		swf_2d="swfs/USClips/TTE_PS_LAX.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_LAX.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_LAX.jpg"
+		isHorizontal="false" 
+		viewInt="0">
+		
+		<column>
+				Aortic Valve (AV)<br></br>
+				<li>Right Coronary Cusp (RCC)</li>
+				<li>Non coronary cusp (NCC)</li>
+				Descending Aorta (DA)<br></br>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Ventricle (LV)<br></br>
+				<li>Anteroseptal (IVS)</li>
+				<li>Inferolateral (IL)</li>
+				Mitral Valve (MV)<br></br>
+				<li>Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				Right Ventricular Outflow Tract (RVOT)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the right shoulder (11 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the descending aorta in SAX </li>
+				<li>increase to 20cm to assess the left pleural space</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the MV and AV in the center of the image (tilt probe away from sternum)</li>
+				<li>make the AV cusps appear symmetric (rotate probe)</li>
+				<li>make the IVS and posterior LV wall appear horizontal (change interspace)</li>
+				<li>ensure the LV apex is not seen (rotate probe)</li>
+				<li>move the probe one interspace higher to image the Ascending Aorta in LAX</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>LV: size, function and wall thickness</li>
+				<li>Ventricular septal defect</li>
+				<li>LA size</li>
+				<li>Mitral Valve</li>
+				<li>Aortic Valve</li>
+				<li>Aortic root</li>
+				<li>Left pleural effusion</li>
+				<li>Pericardial effusion</li>
+				<li>Aortic root: size, dilation and dissection</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Long Axis Right Ventricular Inflow View"
+		swf_spin="swfs/spinSWF/twoAxis-PS_LAX_RVIT.swf"
+		swf_2d="swfs/USClips/TTE_PS_LAX_RVIT.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_LAX_RVIT.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_LAX_RVIT.jpg"
+		isHorizontal="false" 
+		viewInt="1">
+		
+		<column>
+				Coronary Sinus (CS)<br></br>
+				Inferior Vena Cava (IVC)<br></br>
+				<li>Right Atrium (RA)</li>
+				Right Ventricle (RV)<br></br>
+				<li>Inferior (I or IVS)</li>
+				<li>RV free wall or Anterolateral (AL)</li>
+				Superior Vena Cava (SVC)<br></br>
+				Tricuspid Valve (TV)<br></br>
+				<li>Anterior Tricuspid Valve leaflet (ATVL)</li>
+				<li>Posterior Tricuspid Valve Leaflet (PTVL)</li>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal LAX view</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the right shoulder (11 o'clock)</li>
+				<li>tilted inferiorly and medially (towards R hip)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the IVC</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>visualize only the RV and not the LV</li>
+				<li>center the image (slide probe away from sternum)</li>
+				<li>make the TV cusps appear symmetric (rotate probe clockwise)</li>
+				<li>visualize the RV apex (change one interspace lower)</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>RA: size</li>
+				<li>RV: size and function</li>
+				<li>Tricuspid valve</li>
+				<li>IVC valve, Eustachian valve</li>
+				<li>Chiari network</li>
+				<li>Coronary sinus</li>
+				<li>Pacer wires</li>
+				<li>Intra-cardiac mass</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Long Axis Right Ventricular Outflow View"
+		swf_spin="swfs/spinSWF/twoAxis-PS_LAX_RVOT.swf"
+		swf_2d="swfs/USClips/TTE_PS_LAX_RVOT.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_LAX_RVOT.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_LAX_RVOT.jpg"
+		isHorizontal="false" 
+		viewInt="2">
+		
+		<column>
+				Descending Aorta (DA)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Upper Pulmonary Vein (LUPV)*<br></br>
+				Main Pulmonary Artery (MPA)<br></br>
+				Pulmonic Valve (PV)<br></br>
+				Right Pulmonary Artery (RPA)*<br></br>
+				Right Ventricular Outflow Tract (RVOT)<br></br>
+				<h><b>*not often seen in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal LAX view</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the right shoulder (11 o'clock)</li>
+				<li>tilted superiorly and laterally (L shoulder)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the descending aorta</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>center the image (slide probe away from sternum)</li>
+				<li>make the PV cusps appear symmetric (rotate probe clockwise)</li>
+				<li>visualize the RV outflow tract (change one interspace higher)</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>RVOT: size, obstruction</li>
+				<li>Pulmonic Valve: structure and function</li>
+				<li>Main pulmonary artery: size, embolus</li>
+				<li>Branching pulmonary artery</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Short Axis Aortic Valve and Right Ventricular Outflow Tract Level"
+		swf_spin="swfs/spinSWF/twoAxis-PS_SAX_AV_RVOT.swf"
+		swf_2d="swfs/USClips/TTE_PS_SAX_AV_RVOT.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_SAX_AV_RVOT.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_SAX_AV_RVOT.jpg"
+		isHorizontal="false" 
+		viewInt="3">
+		
+		<column>
+				Aortic Valve (AV)<br></br>
+				<li>Right Coronary Cusp (RCC)</li>
+				<li>Left Coronary Cusp (LCC)</li>
+				<li>Non-coronary Cusp (NCC)</li>
+				Descending Aorta (DA)<br></br>
+				Interatrial Septum (IAS)<br></br>
+				Left Atrium (LA)<br></br>
+				<li>Left Atrial Appendage (LAA)*</li>
+				Left Pulmonary Artery (LPA)*<br></br>
+				Main Pulmonary Artery (MPA)<br></br>
+				Pulmonic Valve (PV)<br></br>
+				Right Atrium (RA)<br></br>
+				Right Ventricular Outflow Tract (RVOT)<br></br>
+				Tricuspid Valve (TV)<br></br>
+				<li>Anterior Tricuspid Valve Leaflet (ATVL)</li>
+				<li>Septal Tricuspid Valve leaflet (STVL)</li>
+				<h><b>*not often seen in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal LAX view in which the AV is in the center of the screen</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>rotate the probe 90° clockwise from the right shoulder (marker at 11 o'clock) so the index marker now points towards the left shoulder (2 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the descending aorta</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>center the image (slide probe away from sternum)</li>
+				<li>make the AV cusps appear symmetric (rotate probe)</li>
+				<li>visualize the RV outflow tract (change one interspace higher)</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>Aortic Valve: structure and function</li>
+				<li>Descending Aorta</li>
+				<li>Patent Ductus Arteriosus (PDA)</li>
+				<li>Main and Left Pulmonary Artery: size</li>
+				<li>Pulmonic Valve: structure and function</li>
+				<li>Right Atrium: size</li>
+				<li>Right Ventricular Outflow Tract: size</li>
+				<li>Tricuspid Valve: structure and function</li>
+				<li>Intra-cardiac mass</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Short Axis Left Ventricle at Mitral Valve Level"
+		swf_spin="swfs/spinSWF/twoAxis-PS_SAX_Mitral.swf"
+		swf_2d="swfs/USClips/TTE_PS_SAX_Mitral.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_SAX_Mitral.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_SAX_Mitral.jpg"
+		isHorizontal="false" 
+		viewInt="4">
+		
+		<column>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Ventricle (LV): basal segments<br></br>
+				<li>Anterior (A)</li>
+				<li>Anterolateral (AL)</li>
+				<li>Inferolateral (IL)</li>
+				<li>Inferior (I)</li>
+				<li>Inferoseptal (IS)</li>
+				<li>Anteroseptal (AS)</li>
+				Mitral Valve:<br></br>
+				<li>Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				Right Ventricle (RV)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal SAX AV and RVOT Level view</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the left shoulder (2 o'clock)</li>
+				<li>slightly tilted inferiorly towards LV apex</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the entire LV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the LV in the center of the image (rotate probe)</li>
+				<li>make the LV appear round in shape and the RV crescent shaped (change interspace)</li>
+				<li>visualize both mitral valve leaflets (tilt or slide probe inferior)</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+				
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>LV: size, function and wall thickness</li>
+				<li>RV: size and function</li>
+				<li>Pericardial effusion</li>
+				<li>Mitral valve: structure</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Short Axis Left Ventricle at Mid Level"
+		swf_spin="swfs/spinSWF/twoAxis-PS_SAX_Mid.swf"
+		swf_2d="swfs/USClips/TTE_PS_SAX_Mid.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_SAX_Mid.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_SAX_Mid.jpg"
+		isHorizontal="false" 
+		viewInt="5">
+		
+		<column>
+				Anterolateral Papillary Muscle (AL)<br></br>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Ventricle (LV)<br></br>
+				<li>Anterior (A)</li>
+				<li>Anterolateral (AL)</li>
+				<li>Inferolateral (IL)</li>
+				<li>Inferior (I)</li>
+				<li>Inferoseptal (IS)</li>
+				<li>Anteroseptal (AS)</li>
+				Posteromedial Papillary Muscle (PM)<br></br>
+				Right Ventricle (RV)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal SAX AV and RVOT Level view</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the left shoulder (2 o'clock)</li>
+				<li>tilt or slide inferiorly towards LV apex</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the entire LV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the LV in the center of the image (rotate probe)</li>
+				<li>make the LV appear round in shape and the RV crescent shaped (change one interspace lower)</li>
+				<li>visualize both papillary muscles attached to the LV wall (change one interspace lower)</li>
+				<li>not visualize the mitral valve (tilt more inferior or change one interspace lower)</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>LV: size, function and wall thickness</li>
+				<li>RV: size and function</li>
+				<li>Pericardial effusion</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Short Axis Left Ventricle at Apex Level"
+		swf_spin="swfs/spinSWF/twoAxis-PS_SAX_Apex.swf"
+		swf_2d="swfs/USClips/TTE_PS_SAX_Apex.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_SAX_Apex.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_SAX_Apex.jpg"
+		isHorizontal="false" 
+		viewInt="6">
+		
+		<column>
+				Left Ventricle (LV): apical segments<br></br>
+				<li>Anterior (A)</li>
+				<li>Lateral (L)</li>
+				<li>Inferior (I)</li>
+				<li>Septal (S)</li>
+				Right Ventricle (RV) apex<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal SAX AV and RVOT Level view</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the left shoulder (2 o'clock)</li>
+				<li>tilt or slide inferiorly towards LV apex</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-14cm to see the entire LV and pericardium</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the LV in the center of the image (slide probe)</li>
+				<li>make the LV appear round in shape (change one interspace lower)</li>
+				<li>no papillary muscles should be seen (tilt or slide inferior)</li>
+				<li>a small portion of the RV apex may be seen</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>LV function: global and segmental</li>
+				<li>Apical aneurysm</li>
+				<li>Apical thrombus</li>
+				<li>Pericardial effusion</li>
+				<li>Apical wall thickness (HOCM, non compaction)</li>
+		</column>
+	</row>
+	<row
+		sectionName="Parasternal Pulmonary Artery Bifurcation View"
+		swf_spin="swfs/spinSWF/twoAxis-PS_SAX_PA.swf"
+		swf_2d="swfs/USClips/TTE_PS_SAX_PA.swf"
+		swf_perp="swfs/perpViews/TTE_perp_PS_SAX_PA.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_PS_SAX_PA.jpg"
+		isHorizontal="false" 
+		viewInt="7">
+		
+		<column>
+				Ascending Aorta (Ao)<br></br>
+				Descending Aorta (DA)<br></br>
+				Left Pulmonary Artery (LPA)<br></br>
+				Main Pulmonary Artery (MPA)<br></br>
+				Pulmonic Valve (PV)<br></br>
+				Right Atrium (RA)<br></br>
+				Right Pulmonary Artery (RPA)<br></br>
+				Right Ventricular Outflow Tract (RVOT)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Parasternal SAX AV and RVOT Level view</li>
+				<li>in the 3rd or 4th intercostal space</li>
+				<li>at the left parasternal border</li>
+				<li>with the index marker pointing towards the left shoulder (1-2 o'clock)</li>
+				<li>tilted superiorly and medially</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the PA bifurcation</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>center the image (slide probe away from sternum)</li>
+				<li>make the main pulmonary artery walls appear symmetric (rotate probe)</li>
+				<li>visualize the RV outflow tract (change one interspace higher)</li>
+				<li>AV should not be seen only aorta (tilt probe superior)</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>Ascending Aorta: aneurysm, dissection</li>
+				<li>Main Pulmonary Artery</li>
+				<li>Left pulmonary artery</li>
+				<li>Pulmonic Valve: structure and function</li>
+				<li>Right Ventricular Outflow Tract: size</li>
+				<li>Patent ductus arteriosus (PDA)</li>
+				<li>Pulmonary embolism</li>
+		</column>
+	</row>
+	<row
+		sectionName="Apical Four Chamber"
+		swf_spin="swfs/spinSWF/twoAxis-Apical_4C.swf"
+		swf_2d="swfs/USClips/TTE_Apical_4C.swf"
+		swf_perp="swfs/perpViews/TTE_perp_Apical_4C.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_Apical_4C.jpg"
+		isHorizontal="false" 
+		viewInt="8">
+		
+		<column>
+				Descending Aorta (DA)<br></br>
+				Inter-atrial Septum (IAS)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Lower Pulmonary Vein (LLPV)<br></br>
+				Left Ventricle (LV) walls<br></br>
+				<li>Antero-lateral (AL)</li>
+				<li>Interventricular Septum (IVS), infero-septal (IS)</li>
+				<li>Apex</li>
+				Mitral Valve (MV):<br></br>
+				<li> Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				Right Atrium (RA)<br></br>
+				Right Upper Pulmonary Vein (RUPV)<br></br>
+				Right Ventricle (RV)<br></br>
+				Tricuspid Valve (TV)<br></br>
+				<li>Septal Triscuspid Valve Leaflet (STVL)</li>
+				<li>Anterior Tricuspid Valve Leaflet (ATVL)</li>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>in the 4th or 5th intercostal space </li>
+				<li>in the midclavicular line or at the point of apical pulsation</li>
+				<li>with the index marker pointing towards the left (3 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>14-18cm to image the atria</li>
+				<li>6-10cm to assess the LV apex</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>ensure all four cardiac chambers are seen</li>
+				<li>if the  atria are not seen, tilt the probe anterior</li>
+				<li>if the ventricles are too spherical, move probe down one interspace</li>
+				<li>make the IVS appear vertical and in the center of the image (move probe laterally)</li>
+				<li>if LV tilted to right (move probe laterally)</li>
+				<li>if LV tilted to the left (move probe medially)</li>
+				<li>not visulaize the AV (if AV is seen the probe is too anterior, tilt probe posterior)</li>
+				<li>not foreshorten the LV apex (slide probe to apex)</li>
+				<li>LV apex is thinner then the other LV walls and does not contract</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+				<li>visualize valvular leaflets</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance</b></h>
+				<li>LV: size and function, aneurysm</li>
+				<li>RV: size and function, wires</li>
+				<li>Mitral Valve</li>
+				<li>Tricuspid Valve</li>
+				<li>RA: size</li>
+				<li>LA: size and volume</li>
+				<li>Pericardial effusion</li>
+				<li>Ventricular septal defect</li>
+				<li>Intra-cardiac mass</li>
+				<li>Pacer wires</li>
+		</column>
+	</row>
+	<row
+		sectionName="Apical Five Chamber (Elevated Four Chamber view)"
+		swf_spin="swfs/spinSWF/twoAxis-Apical_5C.swf"
+		swf_2d="swfs/USClips/TTE_Apical_5C.swf"
+		swf_perp="swfs/perpViews/TTE_perp_Apical_5C.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_Apical_5C.jpg"
+		isHorizontal="false" 
+		viewInt="9">
+		
+		<column>
+				Aortic Valve (AV)*<br></br>
+				<li>Left Coronary Cusp (LCC)</li>
+				<li>Right Coronary Cusp (RCC)</li>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Ventricle (LV)<br></br>
+				Left Ventricular Outflow Tract (LVOT)<br></br>
+				Mitral Valve (MV)*<br></br>
+				<li> Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				Right Atrium (RA)<br></br>
+				Right Ventricle (RV)<br></br>
+				Tricuspid Valve (TV)*<br></br>
+				<li>Septal Triscuspid Valve Leaflet (STVL)</li>
+				<li>Anterior Tricuspid Valve Leaflet (ATVL)</li>
+				<h><b>*may be difficult to distinguish cusps/leaflets in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Apical 4 Chamber view</li>
+				<li>in the 4th or 5th intercostal space </li>
+				<li>in the midclavicular line or at the point of apical pulsation</li>
+				<li>with the index marker pointing towards the left (3 o'clock)</li>
+				<li>tilt anterior to see the aortic valve</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>14-18cm to image both atria</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>visualize the AV and LVOT (tilt probe anterior)</li>
+				<li>LVOT alignment (higher interspace and slide probe lateral)</li>
+				<li>make the IVS appear vertical and in the center of the image</li>
+				<li>if LV tilted to right (slide probe lateral)</li>
+				<li>if LV tilted to the left (slide probe medial)</li>
+				<li>atria and IAS should be incompletely seen</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+				<li>visualize aortic valve cusps</li>
+					
+		</column>
+		<column>
+			<h><b>in order of importance</b></h>
+				<li>Aortic Valve</li>
+				<li>LV function</li>
+				<li>LVOT obstruction</li>
+				<li>RV function</li>
+				<li>Ventricular septal defect</li>
+				<li>Mitral Valve</li>
+				<li>Pericardial effusion</li>
+		</column>
+	</row>
+	<row
+		sectionName="Apical Two Chamber (Vertical Long Axis view)"
+		swf_spin="swfs/spinSWF/twoAxis-Apical_2C.swf"
+		swf_2d="swfs/USClips/TTE_Apical_2C.swf"
+		swf_perp="swfs/perpViews/TTE_perp_Apical_2C.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_Apical_2C.jpg"
+		isHorizontal="false" 
+		viewInt="10">
+		
+		<column>
+				Coronary Sinus (CS)<br></br>
+				Descending Aorta (DA): SAX and LAX<br></br>
+				Left Atrium (LA)<br></br>
+				<li>Left Atrial Appendage (LAA)*</li>
+				Left Pulmonary Artery (LPA)*<br></br>
+				Left Ventricle (LV) walls<br></br>
+				<li>Anterior (A)</li>
+				<li>Inferior (I)</li>
+				<li>Apex</li>
+				Mitral Valve (MV)*<br></br>
+				<li> Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				<h><b>*not often seen in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Apical 4 Chamber view</li>
+				<li>in the 4th or 5th intercostal space </li>
+				<li>in the midclavicular line or at the point of apical pulsation</li>
+				<li>from the Apical 4 Chamber view, rotate the probe 60-90 degrees counterclockwise</li>
+				<li>with the index marker now pointing towards the left axilla (1 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>14-18cm to image the LA</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>ensure the LV, LA and MV are seen</li>
+				<li>LV apex at the top of the display (slide probe)</li>
+				<li>Right heart should not be seen (not enough probe rotation)</li>
+				<li>AV and LVOT should not be seen (too much probe rotation)</li>
+				<li>Descending aorta can be seen by tilting probe posterior and medial</li>
+				<li>Descending aorta in LAX rotate probe clockwise</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+					
+		</column>
+		<column>
+			<h><b>in order of importance</b></h>
+				<li>LV: size, function (global, regional)</li>
+				<li>Mitral Valve: structure and function</li>
+				<li>LA: size, volume</li>
+				<li>Pericardial effusion</li>
+				<li>Coronary sinus dilatation</li>
+				<li>Descending Aorta: aneurysm, dissection</li>
+		</column>
+	</row>
+	<row
+		sectionName="Apical Long Axis (Three Chamber view)"
+		swf_spin="swfs/spinSWF/twoAxis-Apical_LAX.swf"
+		swf_2d="swfs/USClips/TTE_Apical_LAX.swf"
+		swf_perp="swfs/perpViews/TTE_perp_Apical_LAX.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_Apical_LAX.jpg"
+		isHorizontal="false" 
+		viewInt="11">
+		
+		<column>
+				Aortic Valve (AV)<br></br>
+				<li>Non-coronary Cusp (NCC)</li>
+				<li>Right Coronary Cusp (RCC)</li>
+				Ascending Aorta (Ao)<br></br>
+				Descending Aorta (DA)<br></br>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Ventricle (LV) walls<br></br>
+				<li>Apex</li>
+				<li>Infero-lateral (IL)</li>
+				<li>Antero-septal (AS)</li>
+				Left Ventricular Outflow Tract (LVOT)<br></br>
+				Mitral Valve (MV)<br></br>
+				<li> Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				Right Ventricle (RV)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the Apical 2 Chamber view</li>
+				<li>in the 4th or 5th intercostal space </li>
+				<li>in the midclavicular line or at the point of apical pulsation</li>
+				<li>from the Apical 2 Chamber view, rotate 45 degrees counterclockwise and tilt anterior</li>
+				<li>with the index marker now pointing towards the right shoulder (11 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>14-18cm to image the LA</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>ensure cardiac chambers are centered (slide probe lateral)</li>
+				<li>make the IVS appear vertical</li>
+				<li>visualize the AV and LVOT (rotate probe)</li>
+				<br></br>
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+					
+		</column>
+		<column>
+			<h><b>in order of importance</b></h>
+				<li>LV: function (global and regional), aneurysm</li>
+				<li>LVOT obstruction</li>
+				<li>Ventricular septal defect</li>
+				<li>Mitral Valve</li>
+				<li>Intra-cardiac mass</li>
+				<li>Pericardial effusion</li>
+				<li>Aortic Valve</li>
+		</column>
+	</row>
+	<row
+		sectionName="Subcostal Four Chamber"
+		swf_spin="swfs/spinSWF/twoAxis-SC_4C.swf"
+		swf_2d="swfs/USClips/TTE_SC_4C.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SC_4C.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SC_4C.jpg"
+		isHorizontal="false" 
+		viewInt="12">
+		
+		<column>
+				Inter-atrial Septum (IAS)<br></br>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Ventricle (LV)<br></br>
+				<li>Antero-lateral (AL)</li>
+				<li>Infero-septal (IS)</li>
+				Liver<br></br>
+				Mitral Valve (MV)<br></br>
+				<li>Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve leaflet (PMVL)</li>
+				Right Atrium (RA)<br></br>
+				Right Ventricle (RV)<br></br>
+				<li>Free (lateral) wall</li>
+				Tricuspid Valve (TV)<br></br>
+				<li>Septal Tricuspid Valve Leaflet (STVL)</li>
+				<li>Anterior Tricuspid Valve Leaflet (ATVL)</li>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>in the subxiphoid region of the abdomen</li>
+				<li>flat and push down with a slight tilt to the patient's right</li>
+				<li>with the index marker pointing towards the left (3 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>16-24cm to image the entire LA and LV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>view all four cardiac chambers</li>
+				<li>see entire LV including apex (slide probe)</li>
+				<li>not visualize the AV (if AV seen then tilt probe posterior or rotate the probe)</li>
+				<li>lengthen the IVS (rotate probe so marker at 2-3 o'clock)</li>
+					
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Pericardial effusion</li>
+				<li>Ventricular septal defect</li>
+				<li>Atrial septal defect</li>
+				<li>LV: size and function</li>
+				<li>RV: size, function, wall thickness</li>
+				<li>RA and LA size</li>
+				<li>Intra-cardiac mass</li>
+				<li>Pacer wires</li>
+				<li>Cardiac motion during code blue</li>
+		</column>
+	</row>
+	<row
+		sectionName="Subcostal Aortic Valve and Right Ventricular Outflow Tract"
+		swf_spin="swfs/spinSWF/twoAxis-SC_SAX_AV_RVOT.swf"
+		swf_2d="swfs/USClips/TTE_SC_SAX_AV_RVOT.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SC_SAX_AV_RVOT.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SC_SAX_AV_RVOT.jpg"
+		isHorizontal="false" 
+		viewInt="13">
+		
+		<column>
+				Aortic Valve (AV)<br></br>
+				<li>Right Coronary Cusp (RCC)</li>
+				<li>Left Coronary Cusp (LCC)</li>
+				<li>Non-coronary Cusp (NCC)</li>
+				Inter-atrial Septum (IAS)<br></br>
+				Left Atrium (LA)<br></br>
+				Main Pulmonary Artery (MPA)<br></br>
+				Pulmonic Valve (PV)<br></br>
+				Right Atrium (RA)<br></br>
+				Right Ventricular Outflow Tract (RVOT)<br></br>
+				Tricuspid Valve (TV)<br></br>
+				<li>Septal Tricuspid Valve Leaflet (STVL)</li>
+				<li>Anterior Tricuspid Valve Leaflet (ATVL)</li>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the subcostal 4C view</li>
+				<li>in the subxiphoid region of the abdomen</li>
+				<li>flat and push down with a slight tilt to the patient's right</li>
+				<li>from the subcostal 4C view, rotate the probe the probe 90° counterclockwise</li>
+				<li>with the index marker now pointing towards the head (12 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>16-24cm to image the entire RV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>center the image (slide probe)</li>
+				<li>visualize the Aortic Valve (tilt probe towards midline)</li>
+				<li>make the AV cusps appear symmetric (rotate probe)</li>	
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Aortic Valve: structure and function</li>
+				<li>Left atrium: size</li>
+				<li>Main Pulmonary Artery: size, mass</li>
+				<li>Pulmonic Valve: structure and function</li>
+				<li>Right Atrium: size</li>
+				<li>Right Ventricular Outflow Tract: size, obstruction</li>
+				<li>Tricuspid Valve: structure and function</li>
+				<li>Atrial Septal Defect: Sinus Venosus Type</li>
+		</column>
+	</row>
+	<row
+		sectionName="Subcostal Left Ventricle at Mitral Valve"
+		swf_spin="swfs/spinSWF/twoAxis-SC_SAX_Mitral.swf"
+		swf_2d="swfs/USClips/TTE_SC_SAX_Mitral.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SC_SAX_Mitral.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SC_SAX_Mitral.jpg"
+		isHorizontal="false" 
+		viewInt="14">
+		
+		<column>
+				Descending Aorta (DA)*<br></br>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Ventricle (LV): basal segments<br></br>
+				<li>Anterior (A)</li>
+				<li>Anterolateral (AL)</li>
+				<li>Inferolateral (IL)</li>
+				<li>Inferior (I)</li>
+				<li>Inferoseptal (IS)</li>
+				<li>Anteroseptal (AS)</li>
+				Mitral valve:<br></br>
+				<li>Anterior Mitral Valve Leaflet (AMVL)</li>
+				<li>Posterior Mitral Valve Leaflet (PMVL)</li>
+				Right Ventricle (RV)<br></br>
+				<h><b>*may not be seen in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the subcostal 4C view</li>
+				<li>in the subxiphoid region of the abdomen</li>
+				<li>flat and push down with a slight tilt to the patient's right</li>
+				<li>from the subcostal 4C view, rotate the probe the probe 90° counterclockwise</li>
+				<li>with the index marker now pointing towards the head (12 o'clock)</li>
+				<li>turn the probe towards the patient's right (more midline)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>16-24cm to image the entire LV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the LV in the center of the image (slide probe)</li>
+				<li>make the LV appear round in shape (rotate probe)</li>
+				<li>visualize the mitral valve (tilt probe)</li>	
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Similar to Parasternal SAX LV at Mitral Valve Level</li>
+				<li>LV: size and function</li>
+				<li>RV: size and function</li>
+				<li>Pericardial effusion</li>
+				<li>Mitral valve: structure</li>
+		</column>
+	</row>
+	<row
+		sectionName="Subcostal Left Ventricle at Mid"
+		swf_spin="swfs/spinSWF/twoAxis-SC_SAX_Mid.swf"
+		swf_2d="swfs/USClips/TTE_SC_SAX_Mid.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SC_SAX_Mid.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SC_SAX_Mid.jpg"
+		isHorizontal="false" 
+		viewInt="15">
+		
+		<column>
+				Interolateral Papillary Muscle (AL)<br></br>
+				Descending Aorta (DA)*<br></br>
+				Inter-ventricular Septum (IVS)<br></br>
+				Left Ventricle (LV)<br></br>
+				<li>Anterior (A)</li>
+				<li>Anterolateral (AL)</li>
+				<li>Inferolateral (IL)</li>
+				<li>Inferior (I)</li>
+				<li>Inferoseptal (IS)</li>
+				<li>Anteroseptal (AS)</li>
+				Posteromedial Papillary Muscle (PM)<br></br>
+				Right Ventricle (RV)<br></br>
+				<h><b>*not often seen in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the subcostal 4C view</li>
+				<li>in the subxiphoid region of the abdomen</li>
+				<li>flat and push down with a slight tilt to the patient's right</li>
+				<li>from the subcostal 4C view, rotate the probe the probe 90° counterclockwise</li>
+				<li>with the index marker now pointing towards the head (12 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>16-24cm to image the entire LV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the LV in the center of the image (slide probe)</li>
+				<li>make the LV appear round in shape (rotate probe)</li>
+				<li>visualize both papillary muscles attached to the LV wall (tilt probe)</li>	
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Similar to Parasternal SAX LV at Mid Level</li>
+				<li>LV: size and function</li>
+				<li>Ventricular Septal Defect (VSD)</li>
+				<li>RV: size and function</li>
+				<li>Pericardial effusion</li>
+		</column>
+	</row>
+	<row
+		sectionName="Subcostal Left Ventricle at Apex"
+		swf_spin="swfs/spinSWF/twoAxis-SC_SAX_Apex.swf"
+		swf_2d="swfs/USClips/TTE_SC_SAX_Apex.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SC_SAX_Apex.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SC_SAX_Apex.jpg"
+		isHorizontal="false" 
+		viewInt="16">
+		
+		<column>
+				Left Ventricle (LV)<br></br>
+				<li>Anterior (A)</li>
+				<li>Lateral (L)</li>
+				<li>Inferior (I)</li>
+				<li>Septal (S)</li>
+				Right Ventricle (RV)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the subcostal 4C view</li>
+				<li>in the subxiphoid region of the abdomen</li>
+				<li>flat and push down with a slight tilt to the patient's right</li>
+				<li>from the subcostal 4C view, rotate the probe the probe 90° counterclockwise</li>
+				<li>with the index marker now pointing towards the head (12 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>16-24cm to image the entire LV</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>place the LV in the center of the image (slide probe)</li>
+				<li>make the LV appear round in shape (rotate probe)</li>
+				<li>no papillary muscles should be seen (tilt probe)</li>	
+				<li>a small portion of the RV apex may be seen</li>	
+			<h><b>Adjust the image gain to:</b></h>
+				<li>visualize the endocardium</li>
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Similar to Parasternal SAX at Apex</li>
+				<li>LV function: global, segmental</li>
+				<li>Apical aneurysm</li>
+				<li>Apical thrombus</li>
+				<li>Pericardial effusion</li>
+		</column>
+	</row>
+	<row
+		sectionName="Subcostal Inferior Vena Cava"
+		swf_spin="swfs/spinSWF/twoAxis-SC_IVC.swf"
+		swf_2d="swfs/USClips/TTE_SC_IVC.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SC_IVC.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SC_IVC.jpg"
+		isHorizontal="false" 
+		viewInt="17">
+		
+		<column>
+				Inferior Vena Cava (IVC)<br></br>
+				Liver<br></br>
+				Right Atrium (RA)<br></br>
+				Hepatic Vein (HV)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>modification of the subcostal 4C view</li>
+				<li>in the subxiphoid region of the abdomen</li>
+				<li>tilt to the patient's left</li>
+				<li>from the subcostal 4C view , rotate the probe 90° counterclockwise while keeping the RA in view</li>
+				<li>with the index marker pointing towards the head (12 o'clock)</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>16-24cm to image the entire IVC</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>view the junction of the IVC and RA (IVC must be shown to enter the RA)</li>
+				<li>make the IVC appear horizontal</li>
+				<li>image an hepatic vein</li>
+				<br></br>
+			<h><b>Differentiate the IVC from the aorta by:</b></h>
+				<li>look for liver surrounding both sides of IVC</li>
+				<li>non-pulsatile IVC, pulsatility of aorta</li>
+				<li>IVC goes into RA</li>
+				<li>no change in aorta size with respiration</li>
+				<li>hepatic vein entering IVC</li>	
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>IVC size</li>
+				<li>-measure 0.5-3.0cm from RA junction</li>
+				<li>-perpendicular to IVC long axis</li>
+				<li>-normal ≤ 2.1cm</li>
+				<li>change in IVC size with respiration</li>
+				<li>-use m-mode</li>
+				<li>-record several beats</li>
+				<li>-patient to sniff for IVC collapse</li>
+		</column>
+	</row>
+	<row
+		sectionName="Suprasternal Long Axis of Aortic Arch"
+		swf_spin="swfs/spinSWF/twoAxis-SS_LAX_AA.swf"
+		swf_2d="swfs/USClips/TTE_SS_LAX_AA.swf"
+		swf_perp="swfs/perpViews/TTE_perp_SS_LAX_AA.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_SS_LAX_AA.jpg"
+		isHorizontal="false" 
+		viewInt="18">
+		
+		<column>
+				Aorta<br></br>
+				<li>Ascending (Ao)</li>
+				<li>Arch</li>
+				<li>Descending (DA)</li>
+				Right Brachiocephalic Artery (RBCA)<br></br>
+				Left Atrium (LA)<br></br>
+				Left Common Carotid Artery (LCCA)<br></br>
+				Left Subclavian Artery (LSA)<br></br>
+				Left Innominate Vein<br></br>
+				Right Pulmonary Artery (RPA)<br></br>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>in the suprasternal notch</li>
+				<li>with the index marker pointing towards the left supraclavicular notch (1 o'clock)</li>
+				<li>tilt inferior and anterior</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-12cm to image the descending aorta</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>view the descending aorta (tilt more anterior)</li>
+				<li>view the head vessels (tilt more posterior)</li>
+				<li>open the lumen of the aorta and see arch (rotate probe)</li>
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Aorta: size, aneurysm, dissection</li>
+				<li>Coarctation of the aorta</li>
+				<li>Right Pulmonary Artery: dilatation, embolus</li>
+				<li>Origin of head vessels (LCCA, LSCA)</li>
+		</column>
+	</row>
+	<row
+		sectionName="Right Parasternal Ascending Aorta"
+		swf_spin="swfs/spinSWF/twoAxis-R_PS_Asc_Aorta.swf"
+		swf_2d="swfs/USClips/TTE_R_PS_Asc_Aorta.swf"
+		swf_perp="swfs/perpViews/TTE_perp_R_PS_Asc_Aorta.swf"
+		jpg_pos="jpgs/probePositions/TTE_position_R_PS_Asc_Aorta.jpg"
+		isHorizontal="false" 
+		viewInt="19">
+		
+		<column>
+				Ascending Aorta(Ao)<br></br>
+				<li>Ascending (ASC)</li>
+				<li>Arch</li>
+				<li>Descending (DA)</li>
+				Aortic Valve (AV)<br></br>
+				Descending Aorta (DA)*<br></br>
+				Left Atrium (LA)<br></br>
+				Left Ventricle (LV)*<br></br>
+				Mitral Valve (MV)*<br></br>
+				Right pulmonary Artery (RPA)<br></br>
+				<h><b>*not often seen in TTE image</b></h>
+		</column>
+		<column>
+			<h><b>Position the TTE transducer:</b></h>
+				<li>in the 2nd or 3rd intercostal space</li>
+				<li>at the right parasternal border</li>
+				<li>with the index marker pointing towards the left clavicle (1 o'clock)</li>
+				<li>turn 90° counterclockwise to see the Ascending Aorta in SAX</li>
+				<br></br>
+			<h><b>Adjust the sector depth to:</b></h>
+				<li>10-16cm to see the ascending aorta in LAX</li>
+		</column>
+		
+		<column>
+			<h><b>Adjust the TTE probe position to:</b></h>
+				<li>Visualize the ascending aorta</li>
+		</column>
+		<column>
+			<h><b>In order of importance:</b></h>
+				<li>Aorta: size, aneurysm and dissection</li>
+		</column>
+	</row>
+</comboBoxData>

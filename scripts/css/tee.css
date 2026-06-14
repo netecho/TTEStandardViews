@@ -1,0 +1,161 @@
+    /* Bootstrap Toggle v2.2.2 corrections for Bootsrtap 4*/
+    .toggle-off {
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125);
+    }
+    .toggle.off {
+        border-color: rgba(0, 0, 0, .25);
+    }
+
+    .toggle-handle {
+        background-color: white;
+        border: thin rgba(0, 0, 0, .25) solid;
+    }
+    /* Fancy CSS for red/green border of TEE probe */
+    .triangle-left-on {
+    width: 0; 
+    height: 0;
+    margin-top: 3px;
+    margin-left:45px;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent red transparent;
+    position:relative;
+    }
+    .triangle-left-on:after{
+        content:'';
+        width: 0; 
+        height: 0; 
+        border-style: solid;
+        border-width: 0 14px 14px 14px;
+        border-color: transparent transparent transparent transparent;
+        position:absolute;
+        top: 1px;
+        left:-12px;
+    }
+    .triangle-left-off {
+    width: 0; 
+    height: 0;
+    margin-top: 3px;
+    margin-left:35px;
+    border-style: solid;
+    border-width: 0 15px 15px 15px;
+    border-color: transparent transparent red transparent;
+    position:relative;
+    }
+    .triangle-left-off:after{
+        content:'';
+        width: 0; 
+        height: 0; 
+        border-style: solid;
+        border-width: 0 14px 14px 14px;
+        border-color: transparent transparent transparent transparent;
+        position:absolute;
+        top: 1px;
+        left:-12px;
+    }
+    .triangle-right-on {
+        width: 0; 
+        height: 0; 
+        border-style: solid;
+        border-width: 0 15px 15px 15px;
+        border-color: transparent transparent #0dff00 transparent;
+        position:absolute;
+        top: 0px;
+        left:-12px;
+    }
+    .triangle-right-on:after{
+        content:'';
+        width: 0; 
+        height: 0; 
+        border-style: solid;
+        border-width: 0 14px 14px 14px;
+        border-color: transparent transparent #007bff transparent;
+        position:absolute;
+        top: 1px;
+        left:-16px;
+    }
+    .triangle-right-off {
+        width: 0; 
+        height: 0; 
+        border-style: solid;
+        border-width: 0 15px 15px 15px;
+        border-color: transparent transparent #0dff00 transparent;
+        position:absolute;
+        top: 0px;
+        left:-12px;
+    }
+    .triangle-right-off:after{
+        content:'';
+        width: 0; 
+        height: 0; 
+        border-style: solid;
+        border-width: 0 14px 14px 14px;
+        border-color: transparent transparent #f8f9fa transparent;
+        position:absolute;
+        top: 1px;
+        left:-16px;
+    }
+    .triangle-text-on{
+      position: absolute;
+      top: 5px;
+      left:15px;
+    }
+    .triangle-text-off{
+      position: absolute;
+      top: 5px;
+      left:15px;
+    }
+    
+    .sliderComponent{
+        background:black;
+    }    
+        
+    #sliderH, #clipSlider{
+        width:100%;        
+    }
+        
+    #sliderV{
+        height:100%;
+        
+    }    
+    
+    .slider-track, .slider-selection{
+        background: #e9ecef;    
+    }
+    
+    .slider-handle{
+        background: #007bff;          
+    }
+    
+    .checkbox{
+        cursor: pointer;
+    }
+        
+    .textColumn
+    {
+        font-size: 0.8em;
+        padding: 0 20px;
+    }
+    
+    #preloadOverlay
+    {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */   
+      height: 100%;
+      width: 100%;
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      left: 0;
+      top: 0;
+      background-color: rgb(0,0,0); /* Black fallback color */
+      background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+      overflow-x: hidden; /* Disable horizontal scroll */
+      transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+    }
+
+    .center 
+    {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      width: 300px;
+    }
