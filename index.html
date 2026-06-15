@@ -70,12 +70,22 @@
           <option value="zh">中文</option>
       </select>
   </div>
+
+  <div class="input-group mb-3 col-lg-3 col-xl-3">
+      <div class="input-group-prepend">
+        <label class="input-group-text bg-primary text-light" for="displayModeSelect" data-i18n="modeLabel">Mode</label>
+      </div>
+      <select class="custom-select border-secondary" id="displayModeSelect" aria-label="Mode">
+          <option value="single" data-i18n="modeSingle">Single</option>
+          <option value="tile" data-i18n="modeTile">Tile</option>
+      </select>
+  </div>
       
   </div>
   <!-- Top Menu boxes -->    
 
   <!-- 3D heart module, Imaging module and Text module -->        
-  <div class="row">
+  <div id="singleViewPanel" class="row">
       
     <!--3d heart module Note: For TTE Standard Views, initial view folder is PS_LAX -->  
     <div class="col-md-10 mx-md-auto col-lg-6 col-xl-5 mb-3">
@@ -240,6 +250,10 @@
     </div>
     <!-- /.row  for 3D heart module, Imaging module, TTE position and Text module-->
 
+    <section id="tileViewPanel" class="tile-view-panel d-none">
+        <div id="tileViewGrid" class="tile-view-grid"></div>
+    </section>
+
     <!--Footer-->
     <div class="row small">
         <div class="col-6"><br><span data-i18n="footerVersion">TTE: Standard views. Version 2.00</span></div>
@@ -259,9 +273,9 @@
     <script src="vendor/jquery.waitforimages/jquery.waitforimages.min.js"></script>
             
     <!--Offloaded to main.js-->
-    <script src="scripts/js/tte-data.js?v=20260614-file-open"></script>
-    <script src="scripts/js/detail-zh.js?v=20260614-file-open"></script>
-    <script src="scripts/js/main.js?v=20260614-file-open"></script>
+    <script src="scripts/js/tte-data.js?v=20260615-tile-view"></script>
+    <script src="scripts/js/detail-zh.js?v=20260615-tile-view"></script>
+    <script src="scripts/js/main.js?v=20260615-tile-view"></script>
     
 </body>
 </html>

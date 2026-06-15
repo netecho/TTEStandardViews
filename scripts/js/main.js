@@ -42,6 +42,7 @@
     var detailTextSelected = 1;     //Column of text to display
     var viewChangeRequestId = 0;
     var currentLanguage = "en";
+    var currentDisplayMode = "single";
 
     var interfaceText = {
         en: {
@@ -65,7 +66,10 @@
             rotatableOn: "Rotate on",
             rotatableOff: "Rotate off",
             clipOverlayOn: "Hide",
-            clipOverlayOff: "Show"
+            clipOverlayOff: "Show",
+            modeLabel: "Mode",
+            modeSingle: "Single",
+            modeTile: "Tile"
         },
         zh: {
             pageTitle: "经胸超声心动图 HTML5 标准切面",
@@ -88,7 +92,10 @@
             rotatableOn: "旋转开启",
             rotatableOff: "旋转关闭",
             clipOverlayOn: "隐藏",
-            clipOverlayOff: "显示"
+            clipOverlayOff: "显示",
+            modeLabel: "模式",
+            modeSingle: "单切面",
+            modeTile: "平铺对比"
         }
     };
 
@@ -215,20 +222,25 @@
     $('#languageSelect').on('change', function(){
         setLanguage($(this).val());
     });
+
+    $('#displayModeSelect').on('change', function(){
+        setDisplayMode($(this).val());
+    });
         
     //Select a view from the laft hand drop-down menu
     $('#viewSelect').on('change', function(){
         
         var viewIndex = ($('#viewSelect').val())
-        var requestId = ++viewChangeRequestId;
+        viewChangeRequestId++;
+        applyViewChange(viewIndex);
+    });
 
-        preloadViewAssets(viewIndex, function() {
-            if (requestId !== viewChangeRequestId) {
-                return;
-            }
-
-            applyViewChange(viewIndex);
-        });
+    $('#tileViewGrid').on('click', '.tile-view-card', function(){
+        var viewIndex = $(this).attr("data-view-index");
+        $("#viewSelect").val(viewIndex);
+        viewChangeRequestId++;
+        applyViewChange(viewIndex);
+        setDisplayMode("single");
     });
 
     //Select a column of text to Details drop-down menu
@@ -638,6 +650,7 @@
             var viewIndex = 0;
             $("#preloadOverlay").show();
             applyViewChange(viewIndex);
+            renderTileView();
             togglePreloader();
 
             console.log("viewSelectionHtmlString");
@@ -646,6 +659,12 @@
 
     function applyViewChange(viewIndex)
         {
+            viewIndex = parseInt(viewIndex, 10);
+            if (isNaN(viewIndex) || !viewsFolderArray[viewIndex])
+                {
+                    return;
+                }
+
             viewsFolderName = viewsFolderArray[viewIndex];
 
             changeViewProbePosition(viewIndex);
@@ -654,6 +673,7 @@
             changeHeartModel(viewIndex);
             changeTEEclip(viewIndex);
             currentViewIndex = viewIndex;
+            updateActiveTile();
         }
 
     function preloadViewAssets(viewIndex, callback)
@@ -730,6 +750,13 @@
 
             renderViewSelect();
             updateToggleLabels();
+            $("#displayModeSelect").val(currentDisplayMode);
+
+            if (currentDisplayMode == "tile")
+                {
+                    renderTileView();
+                }
+
             if (textColumnsArray.length > currentViewIndex)
                 {
                     changeViewText(currentViewIndex);
@@ -760,6 +787,58 @@
                 {
                     $("#viewSelect").val(selectedView);
                 }
+
+            updateActiveTile();
+        }
+
+    function setDisplayMode(mode)
+        {
+            currentDisplayMode = mode == "tile" ? "tile" : "single";
+            $("#displayModeSelect").val(currentDisplayMode);
+
+            if (currentDisplayMode == "tile")
+                {
+                    renderTileView();
+                    $("#singleViewPanel").addClass("d-none");
+                    $("#tileViewPanel").removeClass("d-none");
+                }
+            else
+                {
+                    $("#tileViewPanel").addClass("d-none");
+                    $("#singleViewPanel").removeClass("d-none");
+                }
+        }
+
+    function renderTileView()
+        {
+            if (viewsArray.length == 0 || viewsFolderArray.length == 0)
+                {
+                    return;
+                }
+
+            var tileHtml = "";
+
+            for (var i = 0; i < viewsArray.length; i++)
+                {
+                    var displayName = getViewDisplayName(viewsArray[i]);
+                    var folderName = viewsFolderArray[i];
+
+                    tileHtml += '<button type="button" class="tile-view-card" data-view-index="' + i + '">';
+                    tileHtml += '<span class="tile-view-title">' + escapeHtml(displayName) + '</span>';
+                    tileHtml += '<span class="tile-view-media">';
+                    tileHtml += '<img loading="lazy" src="images/' + escapeHtml(folderName) + '/SV.jpg" alt="' + escapeHtml(displayName) + '">';
+                    tileHtml += '</span>';
+                    tileHtml += '</button>';
+                }
+
+            $("#tileViewGrid").html(tileHtml);
+            updateActiveTile();
+        }
+
+    function updateActiveTile()
+        {
+            $("#tileViewGrid .tile-view-card").removeClass("active");
+            $('#tileViewGrid .tile-view-card[data-view-index="' + currentViewIndex + '"]').addClass("active");
         }
 
     function getViewDisplayName(viewName)
