@@ -43,6 +43,11 @@
     var viewChangeRequestId = 0;
     var currentLanguage = "en";
     var currentDisplayMode = "single";
+    var tileAnimationToggle;
+    var tileAnimationFrame = 0;
+    var tileAnimationInterval = 80;
+    var tileClipFrameWidth = 390;
+    var tileClipFrameHeight = 350;
 
     var interfaceText = {
         en: {
@@ -69,7 +74,8 @@
             clipOverlayOff: "Show",
             modeLabel: "Mode",
             modeSingle: "Single",
-            modeTile: "Tile"
+            modeTile: "Tile",
+            modeAnimatedTile: "Animated tile"
         },
         zh: {
             pageTitle: "经胸超声心动图 HTML5 标准切面",
@@ -95,7 +101,8 @@
             clipOverlayOff: "显示",
             modeLabel: "模式",
             modeSingle: "单切面",
-            modeTile: "平铺对比"
+            modeTile: "平铺对比",
+            modeAnimatedTile: "动图平铺"
         }
     };
 
@@ -557,6 +564,7 @@
             var clipSliderPosition = sliderClip.slider('getValue');
             sliderClip.slider('setValue', 1, true, true);
             sliderClip.slider('setValue', clipSliderPosition, true, true);
+            updateTileAnimationFrame();
 
             //console.log("End of toggleClipOverlay");
         }
@@ -752,9 +760,13 @@
             updateToggleLabels();
             $("#displayModeSelect").val(currentDisplayMode);
 
-            if (currentDisplayMode == "tile")
+            if (isTileDisplayMode())
                 {
                     renderTileView();
+                    if (isAnimatedTileMode())
+                        {
+                            startTileAnimation();
+                        }
                 }
 
             if (textColumnsArray.length > currentViewIndex)
@@ -793,20 +805,49 @@
 
     function setDisplayMode(mode)
         {
-            currentDisplayMode = mode == "tile" ? "tile" : "single";
+            currentDisplayMode = normalizeDisplayMode(mode);
             $("#displayModeSelect").val(currentDisplayMode);
 
-            if (currentDisplayMode == "tile")
+            if (isTileDisplayMode())
                 {
                     renderTileView();
                     $("#singleViewPanel").addClass("d-none");
                     $("#tileViewPanel").removeClass("d-none");
+                    if (isAnimatedTileMode())
+                        {
+                            startTileAnimation();
+                        }
+                    else
+                        {
+                            stopTileAnimation();
+                        }
                 }
             else
                 {
+                    stopTileAnimation();
                     $("#tileViewPanel").addClass("d-none");
                     $("#singleViewPanel").removeClass("d-none");
                 }
+        }
+
+    function normalizeDisplayMode(mode)
+        {
+            if (mode == "tile" || mode == "animatedTile")
+                {
+                    return mode;
+                }
+
+            return "single";
+        }
+
+    function isTileDisplayMode()
+        {
+            return currentDisplayMode == "tile" || currentDisplayMode == "animatedTile";
+        }
+
+    function isAnimatedTileMode()
+        {
+            return currentDisplayMode == "animatedTile";
         }
 
     function renderTileView()
@@ -816,23 +857,98 @@
                     return;
                 }
 
+            var animatedTileMode = isAnimatedTileMode();
             var tileHtml = "";
 
             for (var i = 0; i < viewsArray.length; i++)
                 {
                     var displayName = getViewDisplayName(viewsArray[i]);
                     var folderName = viewsFolderArray[i];
+                    var folderPath = "images/" + escapeHtml(folderName);
 
                     tileHtml += '<button type="button" class="tile-view-card" data-view-index="' + i + '">';
                     tileHtml += '<span class="tile-view-title">' + escapeHtml(displayName) + '</span>';
-                    tileHtml += '<span class="tile-view-media">';
-                    tileHtml += '<img loading="lazy" src="images/' + escapeHtml(folderName) + '/SV.jpg" alt="' + escapeHtml(displayName) + '">';
+                    tileHtml += '<span class="tile-view-media' + (animatedTileMode ? ' tile-view-media-animated' : '') + '">';
+                    if (animatedTileMode)
+                        {
+                            tileHtml += '<span class="tile-view-clip" data-frame-count="1" data-sprite-src="' + folderPath + '/spriteSheet_vid.jpg" role="img" aria-label="' + escapeHtml(displayName) + '"></span>';
+                        }
+                    else
+                        {
+                            tileHtml += '<img loading="lazy" src="' + folderPath + '/SV.jpg" alt="' + escapeHtml(displayName) + '">';
+                        }
                     tileHtml += '</span>';
                     tileHtml += '</button>';
                 }
 
             $("#tileViewGrid").html(tileHtml);
+            if (animatedTileMode)
+                {
+                    prepareTileAnimationFrames();
+                    updateTileAnimationFrame();
+                }
             updateActiveTile();
+        }
+
+    function prepareTileAnimationFrames()
+        {
+            $("#tileViewGrid .tile-view-clip").each(function()
+                {
+                    var clipElement = $(this);
+                    var spriteSrc = clipElement.attr("data-sprite-src");
+                    var image = new Image();
+
+                    clipElement.css("background-image", "url('" + spriteSrc + "')");
+
+                    image.onload = function()
+                        {
+                            var frameCount = Math.max(1, Math.round(image.naturalWidth / tileClipFrameWidth));
+                            clipElement.attr("data-frame-count", frameCount);
+                        };
+
+                    image.src = spriteSrc;
+                });
+        }
+
+    function startTileAnimation()
+        {
+            stopTileAnimation();
+            tileAnimationFrame = 0;
+            updateTileAnimationFrame();
+            tileAnimationToggle = setInterval(function()
+                {
+                    tileAnimationFrame++;
+                    updateTileAnimationFrame();
+                }, tileAnimationInterval);
+        }
+
+    function stopTileAnimation()
+        {
+            if (tileAnimationToggle)
+                {
+                    clearInterval(tileAnimationToggle);
+                    tileAnimationToggle = null;
+                }
+        }
+
+    function updateTileAnimationFrame()
+        {
+            if (!isAnimatedTileMode())
+                {
+                    return;
+                }
+
+            $("#tileViewGrid .tile-view-clip").each(function()
+                {
+                    var frameCount = parseInt($(this).attr("data-frame-count"), 10) || 1;
+                    var frameIndex = tileAnimationFrame % frameCount;
+                    var frameWidth = this.clientWidth || tileClipFrameWidth;
+                    var frameHeight = this.clientHeight || tileClipFrameHeight;
+                    var backgroundX = frameIndex * -frameWidth;
+                    var backgroundY = viewClipMultiplier == tileClipFrameHeight ? -frameHeight : 0;
+
+                    this.style.backgroundPosition = backgroundX + "px " + backgroundY + "px";
+                });
         }
 
     function updateActiveTile()
