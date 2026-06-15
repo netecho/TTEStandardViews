@@ -79,6 +79,7 @@
           <option value="single" data-i18n="modeSingle">Single</option>
           <option value="tile" data-i18n="modeTile">Tile</option>
           <option value="animatedTile" data-i18n="modeAnimatedTile">Animated tile</option>
+          <option value="quiz" data-i18n="modeQuiz">Blind guess</option>
       </select>
   </div>
       
@@ -255,6 +256,26 @@
         <div id="tileViewGrid" class="tile-view-grid"></div>
     </section>
 
+    <section id="quizViewPanel" class="quiz-view-panel d-none">
+        <div class="quiz-layout">
+            <div class="quiz-media-panel">
+                <div class="quiz-header-row">
+                    <div class="quiz-title" data-i18n="quizTitle">Blind guess</div>
+                    <div id="quizScoreBadge" class="quiz-score"></div>
+                </div>
+                <div class="quiz-media tile-view-media tile-view-media-animated">
+                    <span id="quizClip" class="tile-view-clip" data-frame-count="1" role="img" aria-label="Blind guess clip"></span>
+                </div>
+            </div>
+            <div class="quiz-answer-panel">
+                <div id="quizPrompt" class="quiz-prompt" data-i18n="quizPrompt">Which view is this?</div>
+                <div id="quizChoiceGrid" class="quiz-choice-grid"></div>
+                <div id="quizFeedback" class="quiz-feedback" aria-live="polite"></div>
+                <button id="quizNextButton" class="btn btn-primary quiz-next-button" type="button" data-i18n="quizNext">Next</button>
+            </div>
+        </div>
+    </section>
+
     <!--Footer-->
     <div class="row small">
         <div class="col-6"><br><span data-i18n="footerVersion">TTE: Standard views. Version 2.00</span></div>
@@ -274,9 +295,9 @@
     <script src="vendor/jquery.waitforimages/jquery.waitforimages.min.js"></script>
             
     <!--Offloaded to main.js-->
-    <script src="scripts/js/tte-data.js?v=20260616-animated-speed"></script>
-    <script src="scripts/js/detail-zh.js?v=20260616-animated-speed"></script>
-    <script src="scripts/js/main.js?v=20260616-animated-speed"></script>
+    <script src="scripts/js/tte-data.js?v=20260616-quiz-mode"></script>
+    <script src="scripts/js/detail-zh.js?v=20260616-quiz-mode"></script>
+    <script src="scripts/js/main.js?v=20260616-quiz-mode"></script>
     
 </body>
 </html>

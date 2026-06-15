@@ -50,6 +50,12 @@
     var tileAnimationInterval = 34;
     var tileClipFrameWidth = 390;
     var tileClipFrameHeight = 350;
+    var quizCurrentViewIndex = 0;
+    var quizChoices = [];
+    var quizSelectedIndex = null;
+    var quizAnswered = false;
+    var quizCorrectCount = 0;
+    var quizTotalCount = 0;
 
     var interfaceText = {
         en: {
@@ -77,7 +83,14 @@
             modeLabel: "Mode",
             modeSingle: "Single",
             modeTile: "Tile",
-            modeAnimatedTile: "Animated tile"
+            modeAnimatedTile: "Animated tile",
+            modeQuiz: "Blind guess",
+            quizTitle: "Blind guess",
+            quizPrompt: "Which view is this?",
+            quizScore: "Score",
+            quizNext: "Next",
+            quizCorrect: "Correct",
+            quizAnswer: "Answer:"
         },
         zh: {
             pageTitle: "经胸超声心动图 HTML5 标准切面",
@@ -104,7 +117,14 @@
             modeLabel: "模式",
             modeSingle: "单切面",
             modeTile: "平铺对比",
-            modeAnimatedTile: "动图平铺"
+            modeAnimatedTile: "动图平铺",
+            modeQuiz: "盲猜切面",
+            quizTitle: "盲猜切面",
+            quizPrompt: "这是哪个切面？",
+            quizScore: "得分",
+            quizNext: "下一题",
+            quizCorrect: "答对了",
+            quizAnswer: "答案："
         }
     };
 
@@ -250,6 +270,14 @@
         viewChangeRequestId++;
         applyViewChange(viewIndex);
         setDisplayMode("single");
+    });
+
+    $('#quizChoiceGrid').on('click', '.quiz-choice-button', function(){
+        answerQuizChoice(parseInt($(this).attr("data-view-index"), 10));
+    });
+
+    $('#quizNextButton').on('click', function(){
+        startNewQuizQuestion();
     });
 
     //Select a column of text to Details drop-down menu
@@ -770,6 +798,12 @@
                             startTileAnimation();
                         }
                 }
+            else if (isQuizDisplayMode())
+                {
+                    renderQuizQuestion();
+                    prepareQuizClip();
+                    startTileAnimation();
+                }
 
             if (textColumnsArray.length > currentViewIndex)
                 {
@@ -809,32 +843,34 @@
         {
             currentDisplayMode = normalizeDisplayMode(mode);
             $("#displayModeSelect").val(currentDisplayMode);
+            stopTileAnimation();
+            $("#singleViewPanel").addClass("d-none");
+            $("#tileViewPanel").addClass("d-none");
+            $("#quizViewPanel").addClass("d-none");
 
             if (isTileDisplayMode())
                 {
                     renderTileView();
-                    $("#singleViewPanel").addClass("d-none");
                     $("#tileViewPanel").removeClass("d-none");
                     if (isAnimatedTileMode())
                         {
                             startTileAnimation();
                         }
-                    else
-                        {
-                            stopTileAnimation();
-                        }
+                }
+            else if (isQuizDisplayMode())
+                {
+                    $("#quizViewPanel").removeClass("d-none");
+                    startQuizMode();
                 }
             else
                 {
-                    stopTileAnimation();
-                    $("#tileViewPanel").addClass("d-none");
                     $("#singleViewPanel").removeClass("d-none");
                 }
         }
 
     function normalizeDisplayMode(mode)
         {
-            if (mode == "tile" || mode == "animatedTile")
+            if (mode == "tile" || mode == "animatedTile" || mode == "quiz")
                 {
                     return mode;
                 }
@@ -850,6 +886,16 @@
     function isAnimatedTileMode()
         {
             return currentDisplayMode == "animatedTile";
+        }
+
+    function isQuizDisplayMode()
+        {
+            return currentDisplayMode == "quiz";
+        }
+
+    function isAnimatedPlaybackMode()
+        {
+            return currentDisplayMode == "animatedTile" || currentDisplayMode == "quiz";
         }
 
     function renderTileView()
@@ -896,20 +942,25 @@
         {
             $("#tileViewGrid .tile-view-clip").each(function()
                 {
-                    var clipElement = $(this);
-                    var spriteSrc = clipElement.attr("data-sprite-src");
-                    var image = new Image();
-
-                    clipElement.css("background-image", "url('" + spriteSrc + "')");
-
-                    image.onload = function()
-                        {
-                            var frameCount = Math.max(1, Math.round(image.naturalWidth / tileClipFrameWidth));
-                            clipElement.attr("data-frame-count", frameCount);
-                        };
-
-                    image.src = spriteSrc;
+                    prepareClipElement($(this), $(this).attr("data-sprite-src"));
                 });
+        }
+
+    function prepareClipElement(clipElement, spriteSrc)
+        {
+            var image = new Image();
+
+            clipElement.attr("data-frame-count", 1);
+            clipElement.attr("data-sprite-src", spriteSrc);
+            clipElement.css("background-image", "url('" + spriteSrc + "')");
+
+            image.onload = function()
+                {
+                    var frameCount = Math.max(1, Math.round(image.naturalWidth / tileClipFrameWidth));
+                    clipElement.attr("data-frame-count", frameCount);
+                };
+
+            image.src = spriteSrc;
         }
 
     function startTileAnimation()
@@ -925,7 +976,7 @@
 
     function scheduleNextTileAnimationFrame()
         {
-            if (!isAnimatedTileMode())
+            if (!isAnimatedPlaybackMode())
                 {
                     return;
                 }
@@ -942,7 +993,7 @@
 
     function runTileAnimationFrame()
         {
-            if (!isAnimatedTileMode())
+            if (!isAnimatedPlaybackMode())
                 {
                     return;
                 }
@@ -977,12 +1028,12 @@
 
     function updateTileAnimationFrame()
         {
-            if (!isAnimatedTileMode())
+            if (!isAnimatedPlaybackMode())
                 {
                     return;
                 }
 
-            $("#tileViewGrid .tile-view-clip").each(function()
+            $("#tileViewGrid .tile-view-clip, #quizClip.tile-view-clip").each(function()
                 {
                     var frameCount = parseInt($(this).attr("data-frame-count"), 10) || 1;
                     var frameIndex = tileAnimationFrame % frameCount;
@@ -993,6 +1044,176 @@
 
                     this.style.backgroundPosition = backgroundX + "px " + backgroundY + "px";
                 });
+        }
+
+    function startQuizMode()
+        {
+            if (quizChoices.length == 0)
+                {
+                    startNewQuizQuestion();
+                }
+            else
+                {
+                    renderQuizQuestion();
+                    prepareQuizClip();
+                    startTileAnimation();
+                }
+        }
+
+    function startNewQuizQuestion()
+        {
+            if (viewsArray.length == 0 || viewsFolderArray.length == 0)
+                {
+                    return;
+                }
+
+            var nextIndex = getRandomViewIndex();
+            if (viewsArray.length > 1)
+                {
+                    while (nextIndex == quizCurrentViewIndex)
+                        {
+                            nextIndex = getRandomViewIndex();
+                        }
+                }
+
+            quizCurrentViewIndex = nextIndex;
+            quizChoices = buildQuizChoices(quizCurrentViewIndex);
+            quizSelectedIndex = null;
+            quizAnswered = false;
+            renderQuizQuestion();
+            prepareQuizClip();
+            startTileAnimation();
+        }
+
+    function getRandomViewIndex()
+        {
+            return Math.floor(Math.random() * viewsArray.length);
+        }
+
+    function buildQuizChoices(correctIndex)
+        {
+            var choices = [correctIndex];
+            var maxChoices = Math.min(4, viewsArray.length);
+
+            while (choices.length < maxChoices)
+                {
+                    var candidateIndex = getRandomViewIndex();
+                    if (choices.indexOf(candidateIndex) == -1)
+                        {
+                            choices.push(candidateIndex);
+                        }
+                }
+
+            return shuffleArray(choices);
+        }
+
+    function shuffleArray(array)
+        {
+            for (var i = array.length - 1; i > 0; i--)
+                {
+                    var j = Math.floor(Math.random() * (i + 1));
+                    var temp = array[i];
+                    array[i] = array[j];
+                    array[j] = temp;
+                }
+
+            return array;
+        }
+
+    function prepareQuizClip()
+        {
+            if (!viewsFolderArray[quizCurrentViewIndex])
+                {
+                    return;
+                }
+
+            var spriteSrc = "images/" + viewsFolderArray[quizCurrentViewIndex] + "/spriteSheet_vid.jpg";
+            prepareClipElement($("#quizClip"), spriteSrc);
+            updateTileAnimationFrame();
+        }
+
+    function renderQuizQuestion()
+        {
+            if (quizChoices.length == 0)
+                {
+                    return;
+                }
+
+            var text = interfaceText[currentLanguage];
+            var choiceHtml = "";
+
+            $("#quizScoreBadge").text(text.quizScore + ": " + quizCorrectCount + "/" + quizTotalCount);
+
+            for (var i = 0; i < quizChoices.length; i++)
+                {
+                    var choiceIndex = quizChoices[i];
+                    var choiceClass = "quiz-choice-button";
+                    var disabledAttribute = "";
+
+                    if (quizAnswered)
+                        {
+                            disabledAttribute = " disabled";
+                            if (choiceIndex == quizCurrentViewIndex)
+                                {
+                                    choiceClass += " correct";
+                                }
+                            else if (choiceIndex == quizSelectedIndex)
+                                {
+                                    choiceClass += " incorrect";
+                                }
+                        }
+
+                    choiceHtml += '<button type="button" class="' + choiceClass + '" data-view-index="' + choiceIndex + '"' + disabledAttribute + '>';
+                    choiceHtml += escapeHtml(getViewDisplayName(viewsArray[choiceIndex]));
+                    choiceHtml += '</button>';
+                }
+
+            $("#quizChoiceGrid").html(choiceHtml);
+            updateQuizFeedback();
+        }
+
+    function updateQuizFeedback()
+        {
+            var text = interfaceText[currentLanguage];
+            var feedback = $("#quizFeedback");
+
+            feedback.removeClass("correct incorrect");
+
+            if (!quizAnswered)
+                {
+                    feedback.text("");
+                    return;
+                }
+
+            if (quizSelectedIndex == quizCurrentViewIndex)
+                {
+                    feedback.addClass("correct");
+                    feedback.text(text.quizCorrect);
+                }
+            else
+                {
+                    feedback.addClass("incorrect");
+                    feedback.text(text.quizAnswer + " " + getViewDisplayName(viewsArray[quizCurrentViewIndex]));
+                }
+        }
+
+    function answerQuizChoice(selectedIndex)
+        {
+            if (quizAnswered || isNaN(selectedIndex))
+                {
+                    return;
+                }
+
+            quizSelectedIndex = selectedIndex;
+            quizAnswered = true;
+            quizTotalCount++;
+
+            if (selectedIndex == quizCurrentViewIndex)
+                {
+                    quizCorrectCount++;
+                }
+
+            renderQuizQuestion();
         }
 
     function updateActiveTile()
