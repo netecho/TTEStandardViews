@@ -45,7 +45,9 @@
     var currentDisplayMode = "single";
     var tileAnimationToggle;
     var tileAnimationFrame = 0;
-    var tileAnimationInterval = 80;
+    var tileAnimationStartTime = 0;
+    var tileAnimationLastFrame = -1;
+    var tileAnimationInterval = 34;
     var tileClipFrameWidth = 390;
     var tileClipFrameHeight = 350;
 
@@ -914,21 +916,63 @@
         {
             stopTileAnimation();
             tileAnimationFrame = 0;
+            tileAnimationLastFrame = -1;
+            tileAnimationStartTime = Date.now();
             updateTileAnimationFrame();
-            tileAnimationToggle = setInterval(function()
+            tileAnimationLastFrame = tileAnimationFrame;
+            scheduleNextTileAnimationFrame();
+        }
+
+    function scheduleNextTileAnimationFrame()
+        {
+            if (!isAnimatedTileMode())
                 {
-                    tileAnimationFrame++;
+                    return;
+                }
+
+            if (window.requestAnimationFrame)
+                {
+                    tileAnimationToggle = window.requestAnimationFrame(runTileAnimationFrame);
+                }
+            else
+                {
+                    tileAnimationToggle = window.setTimeout(runTileAnimationFrame, tileAnimationInterval);
+                }
+        }
+
+    function runTileAnimationFrame()
+        {
+            if (!isAnimatedTileMode())
+                {
+                    return;
+                }
+
+            tileAnimationFrame = Math.floor((Date.now() - tileAnimationStartTime) / tileAnimationInterval);
+            if (tileAnimationFrame != tileAnimationLastFrame)
+                {
                     updateTileAnimationFrame();
-                }, tileAnimationInterval);
+                    tileAnimationLastFrame = tileAnimationFrame;
+                }
+
+            scheduleNextTileAnimationFrame();
         }
 
     function stopTileAnimation()
         {
             if (tileAnimationToggle)
                 {
-                    clearInterval(tileAnimationToggle);
+                    if (window.cancelAnimationFrame)
+                        {
+                            window.cancelAnimationFrame(tileAnimationToggle);
+                        }
+                    else
+                        {
+                            window.clearTimeout(tileAnimationToggle);
+                        }
                     tileAnimationToggle = null;
                 }
+
+            tileAnimationLastFrame = -1;
         }
 
     function updateTileAnimationFrame()
